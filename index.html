@@ -1,0 +1,181 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>UTS Vue Js</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="col mt-5">
+				<div class="col">
+					<div class="card-deck">
+						<!-- INPUT -->
+						<div class="card">
+							<div class="card-header">
+								<p class="text-center h6">Form Input</p>
+							</div>
+							<div class="card-body">
+								<form method="POST">
+									<div class="form-group">
+										<label>Nama</label>
+										<input type="text" class="form-control" v-model="nama"  placeholder="Nama anda ..." required>
+									</div>
+
+									<div class="form-group">
+										<label>Tanggal Lahir</label>
+										<div class="form-row">
+											<div class="col-md-4">
+												<input type="text" class="form-control" v-model="day" placeholder="Day" required>
+											</div>
+											<div class="col-md-4">
+												<input type="text" class="form-control"v-model="month" placeholder="Month" required>
+											</div>
+											<div class="col-md-4">
+													<input type="text" class="form-control" v-model="year" placeholder="Year" required>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label>Alamat</label>
+										<textarea class="form-control" rows="3" v-model="alamat"></textarea>
+									</div>
+
+									<div class="form-group">
+										<label>Gol Darah</label>
+										<div class="form-group">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" id="A" value="A" v-model="picked">
+												<label class="form-check-label">A</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" id="B" value="B" v-model="picked">
+												<label class="form-check-label">B</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" id="AB" value="AB" v-model="picked">
+												<label class="form-check-label">AB</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" id="O" value="O" v-model="picked">
+												<label class="form-check-label">O</label>
+											</div>
+										</div>
+										
+									</div>
+
+									<div class="form-group">
+										<label>Pekerjaan</label>
+										<div class="form-group">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="be_dev" value="Backend Developer" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox1">Backend Developer</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="fe_dev" value="Frontend Developer" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox2">Frontend Developer</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="devOps" value="DevOps" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox2">DevOps</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="qa_engg" value="QA Engginer" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox2">QA Engginer</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="ai_engg" value="AI Engginer" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox2">AI Engginer</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="uid" value="UI Designer" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox2">UI Designer</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="uxd" value="UX Designer" v-model="jobs">
+												<label class="form-check-label" for="inlineCheckbox2">UX Designer</label>
+											</div>
+										</div>
+									</div>
+								</form>
+								<p class="text-center">Create by: <a href="https://apriansyah.my.id/" class="text-center">@apriansyahrs</a></p>
+							</div>
+						</div>
+
+						<!-- OUTPUT -->
+						<div class="card">
+							<div class="card-header">
+								<p class="text-center h6">Form Output</p>
+							</div>
+							<div class="card-body">
+								<form method="POST">
+									<div class="form-group">
+										<label>Nama</label>
+										<label class="form-control">{{ nama }}</label>
+									</div>
+
+									<div class="form-group">
+										<label>Tanggal Lahir</label>
+										<div class="form-row">
+											<div class="col-md-4">
+												<label class="form-control">{{ day }}</label>
+											</div>
+											<div class="col-md-4">
+												<label class="form-control">{{ month }}</label>
+											</div>
+											<div class="col-md-4">
+													<label class="form-control">{{ year }}</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label>Alamat</label>
+										<textarea class="form-control" rows="3" >{{alamat}}</textarea>
+									</div>
+
+									<div class="form-group">
+										<label>Gol Darah</label>
+										<label class="form-control">{{picked}}</label>
+										</div>
+
+									<div class="form-group">
+										<label>Pekerjaan</label>
+										<label class="form-control">{{jobs}}</label>
+									</div>
+								</form>
+								<p class="text-center">Create by: <a href="https://apriansyah.my.id/" class="text-center">@apriansyahrs</a></p>
+								</form>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				nama: '',
+				day: '',
+				month: '',
+				year: '',
+				alamat: '',
+				picked: '',
+				jobs: []
+			},
+
+		});
+	</script>
+
+</body>
+
+</html>
